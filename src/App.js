@@ -1,10 +1,10 @@
 import React from "react";
 import Note from './components/Note'
-import { useStyles } from "./styles/styled";
+import { useStyles } from "./styles/styles";
 
 function App (props) {
     const classes = useStyles(props);
-    
+
     return(
         <div className={classes.App}>
             <Note/>
