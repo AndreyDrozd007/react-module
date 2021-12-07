@@ -1,4 +1,4 @@
-import { useStyles } from "../styles/styled";
+import { useStyles } from "../styles/styles";
 import Typography from "@material-ui/core/Typography";
 
 const ActiveNoteDisplay = (props) => {
