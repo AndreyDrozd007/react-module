@@ -6,9 +6,9 @@ const ActiveNoteDisplay = (props) => {
 
   return(
     <div className={classes.root} >
-            <Typography variant="h5" component="p">
-              Select note to display
-            </Typography>
+      <Typography variant="h5" component="p">
+          Select note to display
+      </Typography>
     </div>
     )
 };
