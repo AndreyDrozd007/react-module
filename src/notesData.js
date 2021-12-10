@@ -1,4 +1,4 @@
-const notesData = [
+const DATA_NOTES_LIST = [
     { 
         id: 1,
         title: 'Lorem ipsum dolor sit amet', 
@@ -35,4 +35,4 @@ const notesData = [
     },
 ]
 
-export default notesData;
+export default DATA_NOTES_LIST;
