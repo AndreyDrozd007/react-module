@@ -1,15 +1,17 @@
 import React from "react";
 import Note from './components/Note'
-import { useStyles } from "./styles/styles";
+import {styled} from '@mui/system';
 
-function App (props) {
-    const classes = useStyles(props);
+const AppBlock = styled('div')({
+    maxWidth: 500,
+    margin: "0 auto",
+    boxSizing: "border-box",
+  })
 
+export default function App () {
     return(
-        <div className={classes.App}>
+        <AppBlock>
             <Note/>
-        </div>
+        </AppBlock>
     )
-}
-
-export default App;
+};
