@@ -2,27 +2,20 @@ import { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/system";
 import PropTypes from 'prop-types';
 
 import DATA_NOTES_LIST from "../notesData";
+import {CardActiveColor, CardWrapper} from '../styled';
 
-const CardWrapper = styled("div")({
-  marginTop: 20,
-  marginBottom: 20,
-});
-
-const CardActiveColor = styled("div")(({ activeColor }) => ({
-  color: activeColor,
-}));
-
-export default function CardNote ({
+const CardNote = ({
   note: { id, title, description, date },
   activeNote,
   setActiveNote,
-}) {
+  props
+}) => {
   const [color, setColor] = useState(null);
   const [display, setDisplay] = useState([]);
+  props={color}
 
   useEffect(() => {
     if (activeNote !== id) {
@@ -32,7 +25,8 @@ export default function CardNote ({
   }, [activeNote, id]);
 
   const handleColor = () => {
-    const newColor = color === "#00BFFF" ? null : "#00BFFF";
+    const newColor = color === props ? null : props;
+    console.log(newColor);
     const newId = activeNote === id ? null : id;
     setColor(newColor);
     setActiveNote(newId);
@@ -46,19 +40,18 @@ export default function CardNote ({
   return (
     <CardWrapper>
       <Card key={id} elevation={10} onClick={() => handleColor()}>
-        <CardActiveColor activeColor={color}>
+        <CardActiveColor props={color}>
           <CardContent onClick={() => handleToggleClick(DATA_NOTES_LIST.id)}>
-            <CardContent> 
               <Typography variant="h5">{title}</Typography>
               <Typography variant="subtitle2">
                 {description.substring(0, 20)}...
               </Typography>
               <div>{date}</div>
-            </CardContent>
           </CardContent>
         </CardActiveColor>
-        
-        <CardContent>
+      </Card>
+
+      <CardContent>
           {display.includes(DATA_NOTES_LIST.id) && (
             <CardContent key={DATA_NOTES_LIST.id}>
               <Typography variant="h5">{title}</Typography>
@@ -67,10 +60,11 @@ export default function CardNote ({
             </CardContent>
           )}
         </CardContent>
-      </Card>
     </CardWrapper>
   );
 };
+
+export default CardNote;
 
 CardNote.propTypes = {
   note: PropTypes.shape({
