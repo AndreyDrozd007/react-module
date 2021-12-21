@@ -1,13 +1,11 @@
-import {styled} from '@mui/system';
+import {ActiveNoteBlock} from '../styled';
 
-const ActiveNoteBlock = styled("h3")({
-  color: "#00BFFF",
-})
-
-export default function ActiveNote(){
+const ActiveNote = () => {
   return(
       <ActiveNoteBlock>
-          Select note to display
+        Select note to display
       </ActiveNoteBlock>
     )
 };
+
+export default ActiveNote;
