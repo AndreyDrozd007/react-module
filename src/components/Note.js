@@ -4,7 +4,7 @@ import NOTES from "../notesData";
 import CardNote from './CardNote'
 import ActiveNote from "./ActiveNoteBlock";
 
-export default function Note() {
+const Note = () => {
   const [activeNote, setActiveNote] = useState(null);
 
   return (
@@ -22,3 +22,5 @@ export default function Note() {
     </div>
   )
 };
+
+export default Note;
