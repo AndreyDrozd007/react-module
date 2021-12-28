@@ -2,6 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import PropTypes from "prop-types";
 
 import { CardActiveColor, CardWrapper } from "../../styled";
 
@@ -38,3 +39,17 @@ const ItemLayout = ({
 };
 
 export default ItemLayout;
+
+ItemLayout.propTypes = {
+  note: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }),
+  handleColor: PropTypes.func.isRequired,
+};
+
+ItemLayout.defaultProps = {
+  handleColor() {},
+};
