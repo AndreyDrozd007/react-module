@@ -1,10 +1,11 @@
-import './App.css';
+import React from "react";
+import { AppBlock } from "./styled";
+import Dashboard from "./components/Dashboard/Dashboard";
 
-function App() {
+export default function App() {
   return (
-    <div>
-    </div>
+    <AppBlock>
+      <Dashboard />
+    </AppBlock>
   );
 }
-
-export default App;
