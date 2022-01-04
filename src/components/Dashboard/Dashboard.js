@@ -1,8 +1,8 @@
 import React from "react";
-import ItemsContainer from "../ItemsContainer/ItemsContainer";
+import NotesContainer from "../NotesContainer/NotesContainer";
 
 const Dashboard = () => {
-  return <ItemsContainer />;
+  return <NotesContainer />;
 };
 
 export default Dashboard;
