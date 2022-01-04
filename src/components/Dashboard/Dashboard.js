@@ -1,9 +1,9 @@
 import React from "react";
-import ItemsContainer from "../ItemsContainer/ItemsContainer";
+import NoteContainer from "../NoteContainer/NoteContainer";
 
 const Dashboard = () => {
   return (
-    <ItemsContainer/>
+    <NoteContainer/>
   )
 };
 
