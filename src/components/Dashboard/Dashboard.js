@@ -1,9 +1,9 @@
 import React from "react";
-import NoteContainer from "../NoteContainer/NoteContainer";
+import NotesContainer from "../NotesContainer/NotesContainer";
 
 const Dashboard = () => {
   return (
-    <NoteContainer/>
+    <NotesContainer/>
   )
 };
 
