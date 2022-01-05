@@ -22,7 +22,7 @@ const NoteLayout = ({
               <Typography variant="subtitle2">
                 {FormatDisplay(description)}..
               </Typography>
-              <div>{date.substring(0, 20)}</div>
+              <div>{date}</div>
             </>
           )}
           {activeNote === id && (
