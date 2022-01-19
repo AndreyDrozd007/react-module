@@ -11,8 +11,8 @@ const Note = ({
   valueDescription, 
   setValueTitle, 
   setValueDescription,
-  data,
-  setData,
+  dataNotes,
+  setDataNotes,
 }) => {
 
   const handleClick = (id) => {
@@ -27,21 +27,21 @@ const Note = ({
     setValueDescription(description);
   };
 
-  const handlerData = (id, title, description) => {
-    const newData = JSON.parse(JSON.stringify(data));
-    const node = newData.find(note => note.id === id);
-    node.title = title;
-    node.description = description; 
-    setData(newData);
+  const handlerDataNotes = (id, title, description) => {
+    const updatedDataNotes = [...dataNotes];
+    const searchNoteId = updatedDataNotes.find(note => note.id === id);
+    console.log(searchNoteId);
+    searchNoteId.title = title;
+    searchNoteId.description = description; 
+    setDataNotes(updatedDataNotes);
   } 
 
   const saveChangesNote = (id, valueTitle, valueDescription) => {
-    handlerData(id, valueTitle, valueDescription);
+    handlerDataNotes(id, valueTitle, valueDescription);
     setEdit(null);
   }
 
   return (
-    <>
       <NoteLayout 
       handleClick={handleClick} 
       note={note} 
@@ -53,11 +53,10 @@ const Note = ({
       setValueDescription={setValueDescription}
       valueDescription={valueDescription}
       saveChangesNote={saveChangesNote}
-      data={data}
-      setData={setData}
-      handlerData={handlerData}
+      dataNotes={dataNotes}
+      setDataNotes={setDataNotes}
+      handlerDataNotes={handlerDataNotes}
       />
-    </>
   );
 };
 
