@@ -13,6 +13,7 @@ export const ActiveNoteBlock = styled("h2")({
 
 export const CardWrapper = styled("div")({
   marginTop: 20,
+  marginBottom: 20,
 });
 
 export const CardActiveColor = styled("div")(({ active }) => ({
