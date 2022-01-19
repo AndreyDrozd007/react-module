@@ -1,32 +1,32 @@
 import React, { useState,  useEffect} from "react";
 
-import ActiveNote from "../ActiveNote";
-import Note from "../Note/Note";
+import ActiveNote from "components/ActiveNote";
+import Note from "components/Note/Note";
 
-import DATA_NOTES_LIST from "../../notesData";
+import DATA_NOTES_LIST from "notesData";
 
 const NoteContainer = () => {
   const [activeNote, setActiveNote] = useState(null);
   const [edit, setEdit] = useState('');
   const [valueTitle, setValueTitle] = useState(''); 
   const [valueDescription, setValueDescription] = useState('');
-  const [data, setData] = useState(DATA_NOTES_LIST);
+  const [dataNotes, setDataNotes] = useState(DATA_NOTES_LIST);
 
   useEffect(() => {
     const key = localStorage.getItem('data')
       if(key) {
-        setData(JSON.parse(key))
+        setDataNotes(JSON.parse(key))
       }
   }, [])
   
   useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(data))
+    localStorage.setItem('data', JSON.stringify(dataNotes))
   })
 
   return (
     <>
       {!activeNote && <ActiveNote />}
-      {data.map((note) => (
+      {dataNotes.map((note) => (
           <Note
           key={note.id}
           note={note}
@@ -38,8 +38,8 @@ const NoteContainer = () => {
           setValueTitle={setValueTitle}
           valueDescription={valueDescription}
           setValueDescription={setValueDescription}
-          data={data}
-          setData={setData}
+          dataNotes={dataNotes}
+          setDataNotes={setDataNotes}
         />
       ))}
     </>
