@@ -8,66 +8,61 @@ import PropTypes from "prop-types";
 
 import { CardActiveColor, CardWrapper } from "styled";
 import { FORMAT_DIPLAY } from "utils/utils";
-import MyInput from "components/MyInput/MyInput";
+import Input from "components/Input/Input";
 
 const NoteLayout = ({
   note: { id, title, description, date },
   handleClick,
-  activeNote,
   editNote,
-  edit,
   valueTitle,
   setValueTitle,
   valueDescription,
   setValueDescription,
   saveChangesNote,
+  isActive,
+  isEditing,
 }) => {
-  const isActive = activeNote === id;
-
-  const CONDITION_FOR_TITLE =
-    edit === id ? (
-      <MyInput inputValue={valueTitle} setValue={setValueTitle} />
-    ) : (
-      <Typography variant="h5">{title}</Typography>
-    );
-
-  const CONDITION_FOR_DESCRIPTION = edit === id ? (
-    <div>
-      <MyInput
-        inputValue={valueDescription}
-        setValue={setValueDescription}
-      />
-      <AddCircleIcon
-        onClick={() =>
-          saveChangesNote(id, valueTitle, valueDescription)
-        }
-      />
-    </div>
-  ) : (
-    <Typography variant="subtitle2">
-      {FORMAT_DIPLAY(description)}..
-    </Typography>
-  )
-
-  const CONDITION_FOR_ACTIVE_NOTE = activeNote === id && (
-    <CardContent>
-      <Typography variant="h5">{title}</Typography>
-      <Typography variant="body2">{description}</Typography>
-      <div>{date}</div>
-    </CardContent>
-  )
 
   return (
     <CardWrapper>
       <Card elevation={10} onClick={() => handleClick(id)}>
         <CardActiveColor active={isActive}>
           <CardContent>
-            {CONDITION_FOR_TITLE}
+            {isEditing ? (
+              <Input 
+              inputValue={valueTitle} 
+              setValue={setValueTitle}
+              />
+            ) : (
+              <Typography variant="h5">{title}</Typography>
+            )}
             <>
-              {CONDITION_FOR_DESCRIPTION}
+              {isEditing ? (
+                <div>
+                  <Input
+                    inputValue={valueDescription}
+                    setValue={setValueDescription}
+                  />
+                  <AddCircleIcon
+                    onClick={() =>
+                      saveChangesNote(id, valueTitle, valueDescription)
+                    }
+                  />
+                </div>
+              ) : (
+                <Typography variant="subtitle2">
+                  {FORMAT_DIPLAY(description)}..
+                </Typography>
+              )}
               <div>{date}</div>
             </>
-            {CONDITION_FOR_ACTIVE_NOTE}
+            {isActive && (
+              <CardContent>
+                <Typography variant="h5">{title}</Typography>
+                <Typography variant="body2">{description}</Typography>
+                <div>{date}</div>
+              </CardContent>
+            )}
           </CardContent>
           <button>
             <EditIcon onClick={() => editNote(id, title, description)} />
