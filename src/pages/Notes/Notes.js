@@ -1,11 +1,9 @@
 import React, { useState,  useEffect} from "react";
-
 import ActiveNote from "components/ActiveNote";
 import Note from "components/Note/Note";
-
 import DATA_NOTES_LIST from "notesData";
 
-const NoteContainer = () => {
+const Notes = () => {
   const [activeNote, setActiveNote] = useState(null);
   const [edit, setEdit] = useState('');
   const [valueTitle, setValueTitle] = useState(''); 
@@ -46,4 +44,4 @@ const NoteContainer = () => {
   );
 };
 
-export default NoteContainer;
+export default Notes;
