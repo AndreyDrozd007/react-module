@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter,  Routes, Route, Navigate } from "react-router-dom";
 import { AppBlock } from "./styled";
 import MainMenu from "pages/MainMenu/MainMenu";
 import MyNotes from "pages/MyNotes/MyNotes";
@@ -13,13 +13,13 @@ export default function App() {
       <AppBlock>
         <MainMenu />
         <Routes>
-          <Route path="/" element={<Navigate to={"notes"} />} />
-          <Route path="notes" element={<MyNotes />} />
-          <Route path="shared-notes" element={<SharedNotes />} />
-          <Route path="about" element={<About />} />
-          <Route path="not-found" element={<NotFound />} />
-          <Route path="*" element={<Navigate to={"not-found"} />} />
-        </Routes>
+        <Route path="/" element={<Navigate to={"notes"} />} />
+        <Route path="notes" element={<MyNotes />} />
+        <Route path="shared-notes" element={<SharedNotes />} />
+        <Route path="about" element={<About />} />
+        <Route path="not-found" element={<NotFound />} />
+        <Route path="*" element={<Navigate to={"not-found"} />} />
+      </Routes>
       </AppBlock>
     </BrowserRouter>
   );
