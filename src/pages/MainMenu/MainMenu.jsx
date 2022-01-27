@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import LinkTab from "components/LinkTab/LinkTab";
-import AllyProps from "components/AllyProps/AllyProps";
 
 const MainMenu = () => {
   const [tab, setTab] = useState(0);
@@ -12,13 +11,12 @@ const MainMenu = () => {
   return (
     <div>
       <Tabs variant="fullWidth" value={tab} onChange={handleChange}>
-        <LinkTab label="My Notes" pathname="/notes" {...AllyProps(0)} />
+        <LinkTab label="My Notes" pathname="/notes" />
         <LinkTab
           label="Shared Notes"
           pathname="/shared-notes"
-          {...AllyProps(1)}
         />
-        <LinkTab label="About" pathname="/about" {...AllyProps(2)} />
+        <LinkTab label="About" pathname="/about" />
       </Tabs>
     </div>
   );
