@@ -1,6 +1,5 @@
 import React from "react";
 import LinkTab from "components/LinkTab/LinkTab";
-import AllyProps from "components/AllyProps/AllyProps";
 
 const NotFound = () => (
   <>
@@ -9,8 +8,7 @@ const NotFound = () => (
       <LinkTab
         label="Go back the main Page"
         pathname="/notes"
-        {...AllyProps(0)}
-      />
+        />
     </div>
   </>
 );
