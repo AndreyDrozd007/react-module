@@ -1,4 +1,5 @@
 import React from "react";
+
 import Notes from "pages/Notes/Notes"; 
 
 const MyNotes = () => (
