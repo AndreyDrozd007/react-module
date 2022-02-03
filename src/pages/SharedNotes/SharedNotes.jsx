@@ -1,9 +1,8 @@
 import React from "react";
-import Notes from "pages/Notes/Notes"; 
+import Notes from "pages/MyNotes/Notes"; 
 
 const SharedNotes = () => (
     <>
-        <h1>Shared notes Page</h1>
         <div><Notes/></div>
     </>
 )
