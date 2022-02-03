@@ -10,7 +10,7 @@ const MainMenu = () => {
   };
 
   const TabComponents = ROUTES[1].map(
-    ({ element, id, pathname, label,}, tab) => (
+    ({ element, id, pathname, label}, tab) => (
       <LinkTab
         element={element}
         key={id}
