@@ -1,23 +1,26 @@
 import React from "react";
+import Tab from "@mui/material/Tab";
+
 import LinkTab from "components/LinkTab/LinkTab";
-import { ROUTES } from "config/constants";
+import { NOTES } from "config/constants";
 
 const NotFound = () => {
-  const GoBackTab = ROUTES[2].map(({ element, id, pathname, label }, tab) => (
-    <LinkTab
-      element={element}
-      key={id}
-      pathname={pathname}
-      label={label}
-      tab={tab}
-    />
-  ));
+  const GoBackTab = {
+    pathname: NOTES,
+    element: <Tab />,
+    label: "Go back the main Page",
+  };
 
   return (
     <>
       <h1>404 - Page not found</h1>
       <div>
-        {GoBackTab}
+        <LinkTab
+          element={GoBackTab.element}
+          key={GoBackTab.id}
+          pathname={GoBackTab.pathname}
+          label={GoBackTab.label}
+        />
       </div>
     </>
   );
