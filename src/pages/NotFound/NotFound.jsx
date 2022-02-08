@@ -2,11 +2,11 @@ import React from "react";
 import Tab from "@mui/material/Tab";
 
 import LinkTab from "components/LinkTab/LinkTab";
-import { NOTES } from "config/constants";
+import { ROUTES } from "config/constants";
 
 const NotFound = () => {
   const GoBackTab = {
-    pathname: NOTES,
+    pathname: ROUTES.NOTES,
     element: <Tab />,
     label: "Go back the main Page",
   };
