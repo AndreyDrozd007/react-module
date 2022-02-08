@@ -1,6 +1,8 @@
-export const NAVIGATE_NOTES = "/";
-export const NOTES = "/notes";
-export const SHARED_NOTES = "/shared-notes";
-export const ABOUT = "/about";
-export const NOT_FOUND = "/not-found";
-export const NAVIGATE_NOT_FOUND = "/*";
+export const ROUTES = {
+  NAVIGATE_NOTES: "/",
+  NOTES: "/notes",
+  SHARED_NOTES: "/shared-notes",
+  ABOUT: "/about",
+  NOT_FOUND: "/not-found",
+  NAVIGATE_NOT_FOUND: "/*",
+};
