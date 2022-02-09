@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { AppBlock } from "./styled";
-import MainMenu from "pages/MainMenu/MainMenu";
-import Notes from "pages/MyNotes/Notes";
-import SharedNotes from "pages/SharedNotes/SharedNotes";
-import About from "pages/About/About";
-import NotFound from "pages/NotFound/NotFound";
+import MainMenu from "components/MainMenu";
+import Notes from "pages/MyNotes";
+import SharedNotes from "pages/SharedNotes";
+import About from "pages/About";
+import NotFound from "pages/NotFound";
 import { ROUTES } from "config/constants";
 
 export default function App() {
