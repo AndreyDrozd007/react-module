@@ -15,12 +15,12 @@ export default function App() {
       <AppBlock>
         <MainMenu />
         <Routes>
-          <Route path={ROUTES.NAVIGATE_NOTES} element={<Navigate to={"/notes"} />} />
+          <Route path={ROUTES.NAVIGATE_NOTES} element={<Navigate to={ROUTES.NOTES} />} />
           <Route path={ROUTES.NOTES} element={<Notes />} />
           <Route path={ROUTES.SHARED_NOTES} element={<SharedNotes />} />
           <Route path={ROUTES.ABOUT} element={<About />} />
           <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
-          <Route path={ROUTES.NAVIGATE_NOT_FOUND} element={<Navigate to={"/not-found"} />} />
+          <Route path={ROUTES.NAVIGATE_NOT_FOUND} element={<Navigate to={ROUTES.NOT_FOUND} />} />
         </Routes>
       </AppBlock>
     </BrowserRouter>
